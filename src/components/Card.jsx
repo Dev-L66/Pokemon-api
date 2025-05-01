@@ -1,9 +1,7 @@
 import * as motion from "motion/react-client"
 export const Card = ({ pokemon, randomColor }) => {
     return (
-        <motion.div initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 0.9 }}
-            transition={{ duration: 0.5, ease: "easeInOut", delay: 0.5 }} className={`max-w-sm text-gray-900  border ${randomColor} border-gray-500 shadow-purple-400 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 w-60 h-90`}>
+        <motion.div initial={{opacity:0, y:80}} whileInView={{opacity:1, y:0}} transition={{duration:0.5, ease:"easeOut"}} viewport={{once: true}} className={`max-w-sm text-gray-900  border ${randomColor} border-gray-500 shadow-purple-400 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 w-60 h-90`}>
             <div className="flex justify-center p-1">
                 <figure className="rounded-full h-40 w-40 p-1 bg-purple-400 ">
                     <img loading = "lazy"

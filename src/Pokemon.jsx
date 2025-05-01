@@ -18,13 +18,13 @@ export const Pokemon = () => {
         )
         : [];
 
-    if (loading) return <h1 className="animate-spin text-center text-5xl font-bold p-10">Loading...</h1>;
+    if (loading) return <div className="flex justify-center items-center h-screen"><h1 className=" text-6xl font-bold p-10">Loading...</h1></div>;
     if (error) return <h1 className="text-center text-5xl font-bold p-10">{error}</h1>;
     return (
         <>
 
             {!loading && <Title />}
-            {!loading && <Search search={search} setSearch={setSearch} />}
+            {!loading &&  <Search search={search} setSearch={setSearch} />}
             {searchInput.length > 0 ? (<div className="flex flex-wrap gap-10 container justify-center items-center">
                 {searchInput.map((pokemon, index) => (<div key={index}>
                     <Card key={index} pokemon={pokemon} randomColor={randomColor()} /></div>))} </div>) : (<h1 className="text-center text-5xl font-bold p-10">No Pokemon Found.</h1>)}
