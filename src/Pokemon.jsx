@@ -7,6 +7,7 @@ import { useDebounce } from "./hooks/useDebounce";
 import { randomColor } from "./Colors";
 
 
+
 export const Pokemon = () => {
     let url = "https://pokeapi.co/api/v2/pokemon?limit=100";
     const { loading, error, apiData } = useFetch(url);
@@ -22,7 +23,7 @@ export const Pokemon = () => {
     if (error) return <h1 className="text-center text-5xl font-bold p-10">{error}</h1>;
     return (
         <>
-
+          
             {!loading && <Title />}
             {!loading &&  <Search search={search} setSearch={setSearch} />}
             {searchInput.length > 0 ? (<div className="flex flex-wrap gap-10 container justify-center items-center">
